@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>比价搜索</title>
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="lib/font-awesome/css/font-awesome.css">
+  <link rel="stylesheet" href="css/category.css">
+</head>
+
+<body>
+  <div class="mmm_container">
+    <!-- 头部区域 -->
+    <div class="mmm_header">
+      <div class="logo">
+        <a href="index.html">
+          <img src="images/header_logo.png" alt="">
+        </a>
+      </div>
+      <div class="download">
+        <a href="#">
+          <img src="images/header_app.png" alt="">
+        </a>
+      </div>
+    </div>
+    <!-- 搜索区域 -->
+    <div class="mmm_search">
+      <input type="text" placeholder="请输入您想比价的商品">
+      <button class="btn-search">搜索</button>
+    </div>
+    <!-- 分类区域 -->
+    <div class="mmm_category">
+      <ul class="category_title">
+<!-- 挖个坑 -->
+      </ul>
+    </div>
+    <!-- 尾部区域 -->
+    <div class="mmm_footer">
+      <ul class="top">
+        <li>
+          <a href="#">登录</a>
+        </li>
+        <li>
+          <a href="#">注册</a>
+        </li>
+        <li>
+          <a href="#" id="backTop">
+            <i class="fa fa-arrow-circle-o-up"></i>返回顶部</a>
+        </li>
+      </ul>
+      <div class="bottom">
+        <p>
+          <a href="#" class="app">手机APP下载</a>
+          <a href="index.html">慢慢买手机版</a>-- 掌上比价平台</p>
+        <p>m.manmanbuy.com</p>
+      </div>
+    </div>
+  </div>
+
+
+<!-- 一级分类的模板 -->
+<script type="text/html" id="titleTpl">
+  {{each result v i }}
+  <li>
+      <a id="aCli" data-titleId="{{v.titleId}}" href="javascript:;">{{v.title}}
+        <i class="fa fa-chevron-down"></i>
+      </a>
+    </li>
+    {{/each}}
+</script>
+<!-- 二级分类的模板 -->
+<script type="text/template" id="contentTpl">
+  <ul class="category_content">
+    {{each result v i }}
+      <li><a data-id="{{v.categoryId}}" href="#">{{v.category}}</a></li>
+      {{ /each }}
+    </ul>
+</script>
+  <script src="lib/jquery/jquery.js"></script>
+  <script src="lib/artTemplate/template-web.js"></script>
+  <script src="lib/flexible/flexible.js"></script>
+  <script src="js/category.js"></script>
+</body>
+
+</html>

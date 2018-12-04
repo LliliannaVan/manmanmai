@@ -1,0 +1,46 @@
+.mmm_category>.category_title{
+  border:1px solid #CCCCCC;
+  &>li{
+    text-indent: .4rem;
+    line-height: 1.07rem;
+    font-size: .32rem;
+    font-weight: 700;
+    position: relative;
+    background: #EDEDED;
+    i{
+      position: absolute;
+      top: .32rem;
+      right: .21rem
+    }
+    a{
+      display: block;
+      width: 100%;
+      border-bottom: 1px solid #ccc;
+      height: 1.09rem;
+    }
+    &:last-of-type {
+      border-bottom: none;
+    }
+    .category_content{
+      overflow: hidden;
+      background-color: #F9F9F9;
+      display: none;
+      &>li{
+        width: 33.33%;
+        height: 1.08rem;
+        float: left;
+        text-align: center;
+        line-height: 1.07rem;
+        border-right: 1px solid #D1D1D1;
+        border-bottom: 1px solid #D1D1D1;
+        color: #433235;
+        font-size: .27rem;
+        font-weight: 400;
+        &:nth-child(3n){
+         border-right: none;
+        }
+      }
+    }
+  }
+}
+
