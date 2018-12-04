@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="lib/font-awesome/css/font-awesome.css">
+  <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+  <!-- 大盒子 -->
+  <div class="mmm_container">
+    <div class="mmm_header">
+      <!-- 头部区域 -->
+      <div class="logo">
+        <a href="index.html">
+          <img src="images/header_logo.png" alt="">
+        </a>
+      </div>
+      <div class="download">
+        <a href="#">
+          <img src="images/header_app.png" alt="">
+        </a>
+      </div>
+    </div>
+    <!-- 搜索区域 -->
+    <div class="mmm_search">
+      <input type="text" placeholder="请输入您想比价的商品">
+      <button class="btn-search">搜索</button>
+    </div>
+    <!-- 导航区域 -->
+    <ul class="mmm_nav">
+<!-- 挖个坑 -->
+    </ul>
+    <!-- 推荐区域 -->
+    <div class="mmm_recommend">
+      <div class="title">
+        <span>超值折扣推荐</span>
+        <a href="#">
+          <img src="images/more.png" alt="">
+        </a>
+      </div>
+      <ul class="content">
+        <!-- 挖个坑 -->
+      </ul>
+      <div class="more">
+        <a href="moneyctrl.html" class="btn-more">更多优惠信息>></a>
+      </div>
+    </div>
+    <!-- 品牌排行区域 -->
+    <div class="brandSort">
+      <div class="title">
+        <span>品牌排行</span>
+        <a href="#">
+          <img src="images/more.png" alt="">
+        </a>
+      </div>
+    </div>
+    <!-- 尾部区域 -->
+    <div class="mmm_footer">
+      <ul class="top">
+        <li>
+          <a href="#">登录</a>
+        </li>
+        <li>
+          <a href="#">注册</a>
+        </li>
+        <li>
+          <a href="#" id="backTop">
+            <i class="fa fa-arrow-circle-o-up"></i>返回顶部</a>
+        </li>
+      </ul>
+      <div class="bottom">
+        <p>
+          <a href="#" class="app">手机APP下载</a>
+          <a href="index.html">慢慢买手机版</a>-- 掌上比价平台</p>
+        <p>m.manmanbuy.com</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 导航栏的模板 -->
+  <script type="text/html" id="navTpl">
+    {{each result v i}}
+    <li data-id="{{ v.indexmenuId }}" data-type="{{ v.indexmenuId>=8?1:'' }}" {{ if v.indexmenuId >=8 }}style="display:none"{{/if}}>
+      <a  href="{{ v.titlehref }}">
+        {{@ v.img }}
+        <p>{{v.name}}</p>
+      </a>
+    </li>
+    {{/each}}
+</script>
+  <!-- 折扣产品的模板 -->
+  <script type="text/html" id="disProTpl">
+{{each result v i}}
+    <li  class="rec_item">
+        <a data-id="{{v.productId}}"  href="#">
+          <div class="left">
+            {{@ v.productImgSm }}
+          </div>
+          <div class="right">
+            <p>{{ v.productName }}
+              <span class="imp">{{ v.productPinkage }}</span>
+            </p>
+            <ul class="other">
+              <span class="mall">天猫商城 | {{v.productTime}}</span>
+              <span class="num">{{ v.productComCount }}</span>
+            </ul>
+          </div>
+        </a>
+      </li>
+{{/each}}
+  </script>
+  <script src="lib/jquery/jquery.js"></script>
+  <script src="lib/artTemplate/template-web.js"></script>
+  <script src="lib/flexible/flexible.js"></script>
+  <script src="js/index.js"></script>
+</body>
+
+</html>
